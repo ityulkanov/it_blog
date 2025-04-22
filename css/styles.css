@@ -1,0 +1,232 @@
+/* Base styles */
+:root {
+    --primary-color: #4a5568;
+    --secondary-color: #2d3748;
+    --accent-color: #3182ce;
+    --light-color: #f7fafc;
+    --dark-color: #1a202c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--primary-color);
+    background-color: var(--light-color);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--dark-color);
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+nav a {
+    color: var(--accent-color);
+    text-decoration: none;
+    margin-right: 1rem;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    min-height: 70vh;
+}
+
+/* Posts grid */
+#posts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.post-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.post-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.post-content {
+    padding: 1.5rem;
+}
+
+.post-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.post-excerpt {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.read-more:hover {
+    background-color: #2c5282;
+}
+
+/* Single post page */
+.post-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.post-header {
+    margin-bottom: 2rem;
+}
+
+.post-header h1 {
+    font-size: 2.5rem;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.post-meta {
+    color: var(--secondary-color);
+    font-size: 0.875rem;
+}
+
+.featured-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.post-body {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--dark-color);
+}
+
+.post-body p {
+    margin-bottom: 1.5rem;
+}
+
+.post-body h2, .post-body h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.post-body ul, .post-body ol {
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+.post-body pre {
+    background-color: #f1f5f9;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+}
+
+.post-body code {
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    font-size: 0.9rem;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* About page */
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-container h1 {
+    font-size: 2.5rem;
+    color: var(--dark-color);
+    margin-bottom: 1.5rem;
+}
+
+.about-container p {
+    margin-bottom: 1.5rem;
+}
+
+.about-container ul {
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+/* Loading state */
+.loading {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    grid-column: 1 / -1;
+}
+
+footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #posts-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .post-header h1 {
+        font-size: 2rem;
+    }
+}
